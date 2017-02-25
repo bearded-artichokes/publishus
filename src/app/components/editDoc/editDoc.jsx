@@ -28,9 +28,9 @@ export default class EditDoc extends React.Component {
 
   componentWillMount() {
     if(this.props.previewContent) {
-      this.props.dispatch(doc.loadPreviewContent());
+      this.props.dispatch(doc.previewToEditContent());
     } else {
-      this.props.dispatch(doc.loadOriginalContent());
+      this.props.dispatch(doc.originalToEditContent());
     }
   }
 

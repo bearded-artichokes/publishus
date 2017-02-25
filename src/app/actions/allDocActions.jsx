@@ -11,7 +11,7 @@ export function openDoc(docRequest) {
       dispatch(doc.handleChange('docType', data.docType));
       dispatch(doc.handleChange('filePath', data.filePath));
       dispatch(doc.handleChange('parentID', data.parentID));
-      dispatch(doc.editDocChange(data.docContent));
+      dispatch(doc.loadContent(data.docContent));
     });
   }
 }
