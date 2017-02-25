@@ -18,10 +18,15 @@ export function showMergeMenu(value) {
 export function mergeDocument() {
   return (dispatch, getState) => {
     var states = getState();
+    var documentInformation = {
+      docName: states.doc.docName,
+      filePath: states.doc.filePath,
+      docContent: states.doc.previewContent,
+    }
     var mergeRequest = {
-      docInfo: states.doc.editDoc,
+      docInfo: documentInformation,
       mergeInfo: states.merge
     }
-    axios.post('/api/doc/mergeDoc', mergeRequest);
+    axios.post('/api/doc/requestMerge', mergeRequest);
   }
 }

@@ -7,7 +7,6 @@ export default function reducer(state = {
   editContent: '',
   originalContent: 'TEST ORIGINAL CONTENT',
   previewContent: null,
-  showMerge: false,
   error: null
 }, action) {
 
@@ -43,7 +42,14 @@ export default function reducer(state = {
         previewContent: action.payload
       }
     }
+    case "EDIT_ORIGINALCONTENT": {
+      return {
+        ...state,
+        originalContent: action.payload
+      }
+    }
   }
+
 
   return state;
 }

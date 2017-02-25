@@ -15,7 +15,7 @@ export function editDocChange(value) {
   }
 }
 
-export function loadOriginalContent() {
+export function originalToEditContent() {
   return (dispatch, getState) => {
     var states = getState();
     dispatch({
@@ -25,7 +25,7 @@ export function loadOriginalContent() {
   }
 }
 
-export function loadPreviewContent() {
+export function previewToEditContent() {
   return (dispatch, getState) => {
     var states = getState();
     dispatch({
@@ -43,5 +43,12 @@ export function saveDoc() {
         payload: states.doc.editContent
       });
     axios.post('/api/doc/saveDoc', {docContent: states.doc.editContent});
+  }
+}
+
+export function loadOriginalContent(data) {
+  return {
+    type: "EDIT_ORIGINALCONTENT",
+    payload: data
   }
 }
