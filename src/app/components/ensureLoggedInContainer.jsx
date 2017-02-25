@@ -18,7 +18,7 @@ export default class EnsureLoggedInContainer extends React.Component {
       console.log('!this.props.isLoggedIn', !this.props.isLoggedIn);
       console.log('this.props.location.pathname', this.props.location.pathname);
       this.props.dispatch(user.setRedirectUrl(this.props.location.pathname));
-      this.props.router.push('/login');
+      // this.props.router.push('/login');
     }
   }
 
