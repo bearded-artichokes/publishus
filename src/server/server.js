@@ -17,6 +17,9 @@ var app = express();
 
 //=================== Middleware ===================
 //==================================================
+// serve static client-facing files
+app.use(express.static(path.resolve(__dirname, '../public')));
+
 //parse requests
 app.use(parser.json());
 app.use(parser.urlencoded({
@@ -41,12 +44,18 @@ require('./auth/passport.js')(passport);
 app.use('/api/auth', authRouter);
 app.use('/api/doc', docRouter);
 
+//===wildcard route=====
+// handle every other route with index.html, which will contain
+// a script tag to your application's JavaScript file(s).
+app.use('*', function (request, response){
+  response.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'))
+})
+
+
 //====================================================
 //====================================================
 
 
-// serve static client-facing files
-app.use(express.static(path.resolve(__dirname, '../public')));
 
 // spin up server
 app.listen(port, function() {
