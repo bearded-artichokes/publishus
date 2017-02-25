@@ -1,5 +1,5 @@
 export default function reducer(state = {
-  login: false,
+  login: '',
   user: {
     username: '',
     email: '',
@@ -18,14 +18,6 @@ export default function reducer(state = {
         ...state,
         user: {...state.user, username: action.payload, password: '', email: ''},
         login: true
-      }
-    }
-
-    case "USER_LOGOUT": {
-      return {
-        ...state,
-        user: {...state.user, username: '', password: '', email: ''},
-        login: false
       }
     }
 
