@@ -12,10 +12,10 @@ import * as user from '../actions/userActions.jsx';
 })
 
 export default class EnsureLoggedInContainer extends React.Component {
-  componentDidMount() {
+  componentWillMount() {
     if (!this.props.isLoggedIn) {
       this.props.dispatch(user.setRedirectUrl(this.props.location.pathname));
-      this.props.router.push('/login');
+      // this.props.router.push('/login');
     }
   }
 

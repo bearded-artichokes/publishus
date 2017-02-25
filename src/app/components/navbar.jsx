@@ -35,10 +35,10 @@ export default class Navbar extends React.Component {
       return (
         <NavContainer.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="#/createdoc">Create Doc</NavItem>
-            <NavItem eventKey={2} href="#/editdoc">Edit Doc</NavItem>
-            <NavItem eventKey={3} href="#/doc">Document</NavItem>
-            <NavItem eventKey={4} href="#/profile">Profile</NavItem>
+            <NavItem eventKey={1} href="/createdoc">Create Doc</NavItem>
+            <NavItem eventKey={2} href="/editdoc">Edit Doc</NavItem>
+            <NavItem eventKey={3} href="/doc">Document</NavItem>
+            <NavItem eventKey={4} href="/profile">Profile</NavItem>
           </Nav>
           <Nav pullRight>
             <NavDropdown eventKey={4} title={
@@ -46,7 +46,7 @@ export default class Navbar extends React.Component {
                 <i className="fa fa-user-circle"></i>&nbsp;{this.props.username}
               </span>
             } id="user-settings">
-              <MenuItem eventKey={4.1} href="#/logout" onClick={this.logout}>Logout</MenuItem>
+              <MenuItem eventKey={4.1} href="/logout" onClick={this.logout}>Logout</MenuItem>
             </NavDropdown>
           </Nav>
         </NavContainer.Collapse>
@@ -55,8 +55,8 @@ export default class Navbar extends React.Component {
       return (
         <NavContainer.Collapse>
           <Nav pullRight>
-            <NavItem eventKey={4} href="#/login">Login</NavItem>
-            <NavItem eventKey={5} href="#/signup">Signup</NavItem>
+            <NavItem eventKey={4} href="/login">Login</NavItem>
+            <NavItem eventKey={5} href="/signup">Signup</NavItem>
           </Nav>
         </NavContainer.Collapse>
       );
