@@ -12,7 +12,6 @@ exports.auth = function (req, res, next) {
 }
 
 exports.login = function (req, res, next) {
-  console.log('WAS THIS CALLED?');
   if (req.user) {
     req.session.username = req.user.username;
     retrieveDocsAndPullRequests(req.user.username, function(docsArray, myDocsObject, pullRequestsArray) {
